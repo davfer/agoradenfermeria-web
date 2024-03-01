@@ -12,6 +12,8 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Summary: typeof import('./src/components/Summary.vue')['default']
     Timeline: typeof import('./src/components/Timeline.vue')['default']
+    TimelineJornadas: typeof import('./src/components/TimelineJornadas.vue')['default']
     TimelineMagazine: typeof import('./src/components/TimelineMagazine.vue')['default']
+    TimelineSingapore: typeof import('./src/components/TimelineSingapore.vue')['default']
   }
 }

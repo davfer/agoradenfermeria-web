@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import {computed} from "vue";
 import TimelineMagazine from "@/components/TimelineMagazine.vue";
+import TimelineSingapore from "@/components/TimelineSingapore.vue";
+import TimelineJornadas from "@/components/TimelineJornadas.vue";
 
 const props = defineProps<{ magazines: Magazine[] }>()
 
@@ -13,6 +15,15 @@ const items = computed((): Item[] => {
   let its = []
 
   for (let i = 0; i < props.magazines.length; i++) {
+    if (i === 4) {
+      its.push({
+        type: 'singapore',
+      })
+    } else if (i === 22) {
+      its.push({
+        type: 'jornadas',
+      })
+    }
     its.push({
       type: 'magazine',
       magazine: props.magazines[i]
@@ -30,6 +41,16 @@ const getComponent = (item: Item) => {
         props: {
           magazine: item.magazine
         }
+      }
+    case 'singapore':
+      return {
+        comp: TimelineSingapore,
+        props: {}
+      }
+    case 'jornadas':
+      return {
+        comp: TimelineJornadas,
+        props: {}
       }
     default:
       return null
