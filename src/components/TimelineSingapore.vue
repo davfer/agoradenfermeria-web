@@ -8,8 +8,9 @@ const dialog = ref(false)
 
 <template>
   <v-timeline-item
-  dot-color="red" 
-  icon="mdi-airplane"> 
+  dot-color="red"
+  fill-dot
+  icon="mdi-airplane">
 
     <v-card
       color="white"
@@ -24,7 +25,7 @@ const dialog = ref(false)
       <v-card-text>
         <v-dialog
           v-model="dialog"
-          width="800"
+          width="900"
         >
           <template v-slot:activator="{ props }">
             <v-btn
@@ -33,7 +34,7 @@ const dialog = ref(false)
               color="secondary"
               v-bind="props"
             >
-              Ver reportaje
+              {{ $t('buttons.coverage_btn')}}
             </v-btn>
           </template>
           <v-card>

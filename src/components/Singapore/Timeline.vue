@@ -3,6 +3,7 @@ import {computed} from "vue";
 import TimelineMagazine from "@/components/TimelineMagazine.vue";
 import TimelineSingapore from "@/components/TimelineSingapore.vue";
 import TimelineJornadas from "@/components/TimelineJornadas.vue";
+import {useI18n} from "vue-i18n";
 
 interface Item {
   type: string
@@ -45,7 +46,7 @@ const items = [
     title: 'Rueda de prensa Nursing Now - ICN 2019',
     icon: 'video-vintage',
     color: '#dd8208',
-    video: 'https://youtu.be/NSTHLLipPfw',
+    video: 'https://www.youtube.com/embed/NSTHLLipPfw?si=TmCLUtNiEeF5rFSi',
   },
   {
     date: new Date('2019-06-28'),
@@ -108,7 +109,7 @@ const items = [
     title: 'Miquel Angel del COILL presentant el seu pòster ',
     icon: 'presentation',
     color: '#3a2624',
-    video: 'https://youtu.be/sBC85o_8Y7g'
+    video: 'https://www.youtube.com/embed/sBC85o_8Y7g?si=AB2NSNH4tTR2u5_6'
   },
   {
     date: new Date('2019-06-30'),
@@ -141,8 +142,10 @@ const items = [
   },
 ]
 
+const {locale} = useI18n()
+
 function formatDate(date: Date) {
-  return date.toLocaleDateString('es-ES', {year: 'numeric', month: 'long', day: 'numeric'})
+  return date.toLocaleDateString(locale.value, {month: 'long', day: 'numeric'})
 }
 
 </script>
@@ -153,22 +156,26 @@ function formatDate(date: Date) {
       v-for="item in items"
       :key="item.title"
       :dot-color="item.color"
+      fill-dot
       :icon="`mdi-${item.icon}`"
     >
       <template v-slot:opposite>
         {{ formatDate(item.date) }}
       </template>
 
-      <v-card
-        color="secondary"
-        elevation="3"
-      >
-        <v-card-text>
-          {{ item.title }}
+      <v-card color="secondary" elevation="3">
+        <v-card-text class="pb-0">
+          <h3>{{ item.title }}</h3>
         </v-card-text>
-        <v-card-actions>
-          <v-btn v-if="item.news" :href="item.news" target="_blank">Ver Noticia</v-btn>
-          <v-btn v-if="item.icn" :href="item.icn" target="_blank">Ver Notícia ICN</v-btn>
+        <v-card-actions class="pa-4 pt-3">
+          <v-btn color="primary" variant="elevated" v-if="item.news" :href="item.news" target="_blank"
+                 prepend-icon="mdi-newspaper">
+            {{ $t("buttons.news_btn") }}
+          </v-btn>
+          <v-btn variant="outlined" v-if="item.icn" :href="item.icn" target="_blank" prepend-icon="mdi-web">
+            {{ $t("buttons.icn_btn") }}
+          </v-btn>
+          <iframe v-if="item.video" width="560" height="315" :src="item.video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </v-card-actions>
       </v-card>
     </v-timeline-item>

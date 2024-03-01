@@ -1,0 +1,10 @@
+buttons:
+  article_btn: "Ver artículo"
+  abstract_btn: "Ver resumen"
+  news_btn: "Ver noticia"
+  poster_btn: "Póster"
+  video_btn: "Ver vídeo"
+  icn_btn: "Ver noticia ICN"
+  coverage_btn: "Ver reportaje"
+  jornada_btn: "Portal"
+  video_jornada_btn: "Vídeo"
