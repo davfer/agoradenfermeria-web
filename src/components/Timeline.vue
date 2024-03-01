@@ -19,7 +19,7 @@ const items = computed((): Item[] => {
       its.push({
         type: 'singapore',
       })
-    } else if (i === 22) {
+    } else if (i === 14) {
       its.push({
         type: 'jornadas',
       })
