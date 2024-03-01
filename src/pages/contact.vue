@@ -7,7 +7,7 @@
   >
     <v-container>
       <v-sheet width="450" class="center mx-auto">
-        <v-form @submit.prevent>
+        <v-form @submit.prevent="submit">
           <v-text-field
             required
             clearable
@@ -55,27 +55,42 @@
   </v-card>
 </template>
 
-<script>
-  export default {
-    data: () => ({
-      name: '',
-      mail: '',
-      subject: '',
-      message: '',
-      rules: [
-        value => {
-          if (value) return true
+<script setup lang="ts">
 
-          return 'Es necesario introducir texto'
-        },
-      ],
-      rulesMail: [
-        value => {
-          if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+import {useFetcher} from "@/lib/fetcher";
+const fetcher = useFetcher()
+const name = ref('')
+const mail = ref('')
+const subject = ref('')
+const message = ref('')
+const loading = ref(false)
 
-          return 'Es necesario entra un mail valido. Ej.agoradenfermeria@agora.net'
-        },
-      ],
-    }),
-  }
+const rules = [
+    value => {
+      if (value) return true
+      return 'You must enter a first name.'
+    },
+  ]
+const rulesMail = [
+    value => {
+      if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+
+        return 'Es necesario entra un mail valido. Ej.agoradenfermeria@agora.net'
+    },
+  ]
+
+async function submit (event) {
+        loading.value = true
+        const results = await event
+        
+        if (results.valid !== true) {
+          return false
+        }
+
+        
+        await fetcher.post("contact")
+        loading.value = false
+      }
+      
 </script>
+

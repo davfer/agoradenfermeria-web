@@ -7,10 +7,9 @@ const dialog = ref(false)
 </script>
 
 <template>
-  <v-timeline-item>
-    <template v-slot:icon>
-      <v-avatar image="https://i.pravatar.cc/64"></v-avatar>
-    </template>
+  <v-timeline-item
+  dot-color="red" 
+  icon="mdi-airplane"> 
 
     <v-card
       color="white"
