@@ -24,6 +24,11 @@ const sections = computed(() => {
 
   return sections
 })
+
+const authors = computed(() => (summary: Summary) => {
+  if (!summary.authors) return ''
+  return summary.authors.map(author => author.trim()).join('; ')
+})
 </script>
 
 <template>
@@ -43,8 +48,8 @@ const sections = computed(() => {
           class="SummarySection"
           two-line>
           <v-list-item-title class="text-wrap SummarySection__title" v-html="summary.label?.title"></v-list-item-title>
-          <v-list-item-subtitle class="SummarySection__subtitle" v-html="summary.author"></v-list-item-subtitle>
-          <v-list-item-action class="py-2 d-flex">
+          <v-list-item-subtitle class="SummarySection__subtitle pt-2 px-2 font-italic" v-html="authors(summary)"></v-list-item-subtitle>
+          <v-list-item-action class="pb-2 pt-4 d-flex">
             <div class="flex-grow-1">
               <v-btn
                 v-if="summary.abstract"
@@ -68,7 +73,7 @@ const sections = computed(() => {
             </div>
           </v-list-item-action>
 
-          <v-divider v-if="j + 1 < section.length"/>
+          <v-divider v-if="j + 1 < section.length" class="my-2"/>
         </v-list-item>
       </v-list>
     </v-card-text>
@@ -79,10 +84,12 @@ const sections = computed(() => {
 .Summary
   &__title
     font-size: 1em !important
+    font-weight: bold
 
 .SummarySection
   &__title
     color: #000080
+    font-size: 1.5em !important
 
   &__subtitle
     font-size: 1rem

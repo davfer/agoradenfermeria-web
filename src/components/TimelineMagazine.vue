@@ -73,12 +73,12 @@ const image = computed(() => {
     >
       <div class="d-flex flex-no-wrap justify-space-between">
         <v-img :src="image" :width="100" class="flex-grow-0"></v-img>
-        <div class="flex-grow-1">
+        <div class="flex-grow-1 d-flex flex-column">
           <v-card-title class="text-h5">
             {{ props.magazine.details?.label }}
           </v-card-title>
 
-          <v-card-subtitle>
+          <v-card-subtitle class="flex-grow-1">
             {{ $t("timeline.number", {num: props.magazine.number}) }}
           </v-card-subtitle>
 
@@ -109,15 +109,48 @@ const image = computed(() => {
                 </v-btn>
               </template>
               <v-card>
-                <v-card-title>
-                  <span class="text-h5">
-                    {{ $t('timeline.summary_title') }}
-                  </span>
+                <v-card-title class="d-flex justify-end align-center">
+                  <v-btn
+                    icon="mdi-close"
+                    variant="text"
+                    @click="dialog = false"
+                  ></v-btn>
                 </v-card-title>
                 <v-card-text>
+                  <v-card
+                    color="secondary"
+                    elevation="3"
+                  >
+                    <div class="d-flex flex-no-wrap justify-space-between">
+                      <v-img :src="image" :width="100" class="flex-grow-0"></v-img>
+                      <div class="flex-grow-1 d-flex flex-column">
+                        <v-card-title class="text-h5">
+                          {{ props.magazine.details?.label }}
+                        </v-card-title>
+
+                        <v-card-subtitle class="flex-grow-1">
+                          {{ $t("timeline.number", {num: props.magazine.number}) }}
+                        </v-card-subtitle>
+                        <v-card-actions class="justify-end d-flex">
+                          <v-btn
+                            class="ms-2"
+                            prepend-icon="mdi-eye"
+                            size="small"
+                            variant="tonal"
+                            :to="{name: '/magazine/[id]', params: {id: props.magazine.id.toString()}}"
+                          >
+                            {{ $t('timeline.view') }}
+                          </v-btn>
+                        </v-card-actions>
+                      </div>
+                    </div>
+                  </v-card>
+
+                  <v-divider class="my-4" />
+
                   <Summary :summaries="summaries"/>
                 </v-card-text>
-                <v-card-actions>
+                <v-card-actions >
                   <v-spacer></v-spacer>
                   <v-btn
                     color="green-darken-1"

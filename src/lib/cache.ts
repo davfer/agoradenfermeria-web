@@ -7,14 +7,14 @@ export interface CachedItem<T> {
 }
 
 export async function getCached<T>(cache: Ref<CachedItem<T>[]>, key: string, TTL: number, fetchFn: () => Promise<T>): Promise<T> {
-  const candidate = cache.value.find((item) => item.key === key)
-  if (candidate && candidate.fetchedAt > new Date(new Date().getTime() - TTL)) {
-    return candidate.value
+  const candidateIdx = cache.value.findIndex((item) => item.key === key)
+  if (candidateIdx !== -1 && cache.value[candidateIdx].fetchedAt > new Date(new Date().getTime() - TTL)) {
+    return cache.value[candidateIdx].value
   }
   const value = await fetchFn()
-  if (candidate) {
-    candidate.value = value
-    candidate.fetchedAt = new Date()
+  if (candidateIdx !== -1) {
+    cache.value[candidateIdx].value = value
+    cache.value[candidateIdx].fetchedAt = new Date()
   } else {
     cache.value.push({
       key: key,

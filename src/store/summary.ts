@@ -24,6 +24,7 @@ export const useSummaryStore = defineStore('summary', () => {
             status: parseInt(response.data[i].status),
             text_id: parseInt(response.data[i].text_id),
             abstract_id: parseInt(response.data[i].abstract_id),
+            authors: response.data[i].authors,
 
             text: response.data[i].text_file_path ? {
               file_path: response.data[i].text_file_path,

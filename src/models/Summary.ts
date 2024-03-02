@@ -14,6 +14,8 @@ interface Summary {
   label: SummaryLabel | undefined;
   section: SummarySection | undefined;
   institution: Institution | undefined;
+
+  authors: string[];
 }
 
 interface SummaryLabel {
