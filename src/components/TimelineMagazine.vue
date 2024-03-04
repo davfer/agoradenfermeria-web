@@ -137,7 +137,7 @@ const image = computed(() => {
                             prepend-icon="mdi-eye"
                             size="small"
                             variant="tonal"
-                            :to="{name: '/magazine/[id]', params: {id: props.magazine.id.toString()}}"
+                            :to="{name: '/magazine/[id]', params: {id: props.magazine.number.toString()}}"
                           >
                             {{ $t('timeline.view') }}
                           </v-btn>
