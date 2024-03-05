@@ -37,7 +37,7 @@ import {useI18n} from "vue-i18n";
 import {useRouter} from "vue-router";
 import {computed} from "vue";
 
-const {t, locale} = useI18n()
+const {t, locale} = useI18n() 
 
 const router = useRouter()
 
