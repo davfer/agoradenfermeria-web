@@ -1,7 +1,8 @@
 <template>
   <v-app-bar color="primary" density="prominent">
     <template v-slot:prepend>
-      <v-img :src="logoUrl" :width="200"/>
+      <v-img v-if="mobile" :src="logoUrl" :width="70"/>
+      <v-img v-else :src="logoUrl" :width="200"/>
     </template>
 
     <v-container class="ma-2">
@@ -21,7 +22,7 @@
       <v-row>
         <v-tabs :model-value="tabPage" color="black" grow height="46">
           <v-tab to="/" value="/">{{ $t('header.revista') }}</v-tab>
-          <v-tab to="/resources" value="/resources">{{ $t('header.recursos') }}</v-tab>
+          <v-tab v-if="false" to="/resources" value="/resources">{{ $t('header.recursos') }}</v-tab>
           <v-tab to="/contact" value="/contact">{{ $t('header.contacto') }}</v-tab>
         </v-tabs>
       </v-row>
@@ -36,8 +37,10 @@ import logoEs from "/src/assets/logo_es.png"
 import {useI18n} from "vue-i18n";
 import {useRouter} from "vue-router";
 import {computed} from "vue";
+import {useDisplay} from "vuetify";
 
 const {t, locale} = useI18n()
+const { mobile } = useDisplay()
 
 const router = useRouter()
 

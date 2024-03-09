@@ -3,8 +3,11 @@ import {computed} from "vue";
 import TimelineMagazine from "@/components/TimelineMagazine.vue";
 import TimelineSingapore from "@/components/TimelineSingapore.vue";
 import TimelineJornadas from "@/components/TimelineJornadas.vue";
+import {useDisplay} from "vuetify";
 
 const props = defineProps<{ magazines: Magazine[] }>()
+
+const {mobile} = useDisplay()
 
 interface Item {
   type: string
@@ -60,7 +63,7 @@ const getComponent = (item: Item) => {
 </script>
 
 <template>
-  <v-timeline>
+  <v-timeline :side="mobile ? 'end' : undefined">
     <component :is="getComponent(item)?.comp" v-for="(item, i) in items" :key="i" v-bind="getComponent(item)?.props"/>
   </v-timeline>
 </template>
