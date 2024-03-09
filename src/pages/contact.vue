@@ -101,7 +101,8 @@ async function submit (event) {
         loading.value = false
       }
 
-window.okToken = function () {
+window.okToken = function (ev) {
+  console.log(ev)
   loading.value = false;
 }
 
