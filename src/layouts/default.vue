@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <DefaultBar/>
-  
     <DefaultView/>
-
     <DefaultFooter/>
   </v-app>
 </template>

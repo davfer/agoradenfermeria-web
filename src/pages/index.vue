@@ -11,7 +11,7 @@
         <Timeline :magazines="magazineStore.magazines"/>
       </v-col>
       <v-col lg="2" sm="12" class="ms-md-auto">
-
+        <collaborators :collaborators="collaboratorStore.collaborators" />
       </v-col>
     </v-row>
   </v-container>
@@ -21,9 +21,13 @@
 import Timeline from "@/components/Timeline.vue";
 import {useMagazineStore} from "@/store/magazine";
 import {onMounted} from "vue";
+import Collaborators from "@/components/Collaborators.vue";
+import {useCollaboratorStore} from "@/store/collaborator";
 
 const magazineStore = useMagazineStore();
+const collaboratorStore = useCollaboratorStore();
 onMounted(async () => {
   await magazineStore.loadMagazines();
+  await collaboratorStore.loadCollaborators();
 });
 </script>
