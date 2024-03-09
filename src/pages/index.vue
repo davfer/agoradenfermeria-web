@@ -1,16 +1,16 @@
 <template>
-  <v-container>
-    <v-row class="d-flex align-center justify-center">
+  <v-container fluid>
+    <v-row class="">
       <v-sheet :height="100" border
                class="d-flex align-center justify-center flex-wrap text-center mx-auto px-4" color="secondary" rounded>
         {{ $t('description') }}
       </v-sheet>
     </v-row>
     <v-row>
-      <v-col cols='8'>
+      <v-col lg="7" sm="12" class="ms-md-auto">
         <Timeline :magazines="magazineStore.magazines"/>
       </v-col>
-      <v-col cols="4">
+      <v-col lg="2" sm="12" class="ms-md-auto">
 
       </v-col>
     </v-row>
