@@ -1,3 +1,13 @@
 contact:
   name: "Nombre"
   mandatory: "Campo obligatorio"
+  mail: "Correo"
+  subject: "Asunto"
+  message: "Mensaje"
+  validMail: "{'Es necesario introducir un correo electrónico válido. e.g.agoradenfermeria@agora.net'}"
+  contactTitle: "Formulario de contacto"
+  submitContact: "Enviar"
+  errorFormMessageTitle: "Error al enviar el mensaje"
+  errorFormMessage: "El mensaje no se ha podido enviar correctamente. Intente contactar mediante otros canales. Disculpe los inconvenientes."
+  successFormMessageTitle: "El mensaje se ha enviado correctamente"
+  successFormMessageText: "El mensaje se ha enviado correctamente, en breves le responderemos el correo. Muchas grácias por contactar con nosotros"
