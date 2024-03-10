@@ -15,7 +15,7 @@
   >
     <v-card-title class="px-6 text-h4" >{{ $t('contact.contactTitle') }}</v-card-title>
     <v-card-text class="pa-5">
-      <v-form @submit.prevent="submit">
+      <v-form @submit.prevent="submit" ref="form">
         <v-text-field
           required
           clearable
@@ -82,6 +82,7 @@ const name = ref('')
 const mail = ref('')
 const subject = ref('')
 const message = ref('')
+const form = ref(null)
 
 const captchaCode = ref('')
 
@@ -117,17 +118,16 @@ async function submit(event) {
     subject: subject.value,
     message: message.value,
     captchaCode: captchaCode.value,
-  }).then(() => {
+  }).then((e) => {
+    console.log("OK", e)
     success.value = true
     error.value = ''
 
-    name.value = ''
-    mail.value = ''
-    subject.value = ''
-    message.value = ''
+    form.reset()
   }).catch((e) => {
+    console.log(e)
     success.value = false
-    error.value = e
+    error.value = e.toString()
   })
   loading.value = false
 }
