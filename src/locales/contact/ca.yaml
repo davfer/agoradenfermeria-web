@@ -1,3 +1,13 @@
 contact:
   name: "Nom"
   mandatory: "Camp obligatori"
+  mail: "Correu"
+  subject: "Assumpte"
+  message: "Missatge"
+  titleContactForm: "Formulari"
+  validMail: "{'Cal introduir un correu electrònic vàlid. e.g.agoradenfermeria@agora.net'}"
+  contactTitle: "Formulari de contacte"
+  errorFormMessageTitle: "Error al enviar el missatge"
+  errorFormMessageText: "El missatge no s'ha pogut enviar correctament. Intenteu contactar mitjançant altres canals. Disculpi els inconvenients."
+  successFormMessageTitle: "El missatge s'ha enviat correctament"
+  successFormMessageText: "El missatge s'ha enviat correctament, en breus respondrem el correu. Moltes gràcies per contactar amb nosaltres."

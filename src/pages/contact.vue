@@ -1,11 +1,11 @@
 <template>
   <v-alert v-if="success"
-           text="El vostre missatge s'ha enviat correctament. En breu li respondrem."
-           title="Missatge enviat correctament"
+           :text="$t('contact.successFormMessageText')"
+           :title="$t('contact.successFormMessageTitle')"
            type="success"
            class="rounded-0"
   />
-  <v-alert v-if="error !== ''" :text="error" title="Error en l'enviament del formulari" type="error" border="false"
+  <v-alert v-if="error !== ''" :text="$t('contact.errorFormMessageText')" :title="$t('contact.errorFormMessageTitle')" type="error" border="false"
            class="rounded-0"/>
 
   <v-card
@@ -13,7 +13,7 @@
     max-width="550"
     min-height="500"
   >
-    <v-card-title class="px-6 text-h4">Formulario de contacto</v-card-title>
+    <v-card-title class="px-6 text-h4" >{{ $t('contact.contactTitle') }}</v-card-title>
     <v-card-text class="pa-5">
       <v-form @submit.prevent="submit">
         <v-text-field
@@ -28,21 +28,21 @@
           clearable
           v-model="mail"
           :rules="rulesMail"
-          label="Correo"
+          :label="$t('contact.mail')"
         ></v-text-field>
         <v-text-field
           required
           clearable
           v-model="subject"
           :rules="rules"
-          label="Asunto"
+          :label="$t('contact.subject')"
         ></v-text-field>
         <v-textarea
           required
           clearable
           v-model="message"
           :rules="rules"
-          label="Mensaje"
+          :label="$t('contact.message')"
         ></v-textarea>
 
         <div>
@@ -60,7 +60,7 @@
             rounded="sm"
             :disabled="loading"
           >
-            Enviar
+            {{ $t('contact.submitContact') }}
           </v-btn>
         </div>
       </v-form>
@@ -86,7 +86,7 @@ const message = ref('')
 const captchaCode = ref('')
 
 const loading = ref(true)
-const success = ref(false)
+const success = ref(true)
 const error = ref('')
 
 const rules = [
@@ -99,7 +99,8 @@ const rulesMail = [
   (value: string) => {
     if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
 
-    return 'Es necesario entra un mail valido. Ej.agoradenfermeria@agora.net'
+    return t('contact.validMail')
+   // return 'Es necesario entra un mail valido. Ej.agoradenfermeria@agora.net'
   },
 ]
 
