@@ -24,7 +24,12 @@
           <v-tab to="/" value="/">{{ $t('header.revista') }}</v-tab>
           <v-tab v-if="false" to="/resources" value="/resources">{{ $t('header.recursos') }}</v-tab>
           <v-tab to="/contact" value="/contact">{{ $t('header.contacto') }}</v-tab>
+          <v-select
+            label="Idioma"
+            :items="['Català', 'Castella']"
+          ></v-select>
         </v-tabs>
+
       </v-row>
     </v-container>
   </v-app-bar>
