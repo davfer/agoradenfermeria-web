@@ -86,7 +86,7 @@ const message = ref('')
 const captchaCode = ref('')
 
 const loading = ref(true)
-const success = ref(true)
+const success = ref(false)
 const error = ref('')
 
 const rules = [
@@ -100,7 +100,6 @@ const rulesMail = [
     if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
 
     return t('contact.validMail')
-   // return 'Es necesario entra un mail valido. Ej.agoradenfermeria@agora.net'
   },
 ]
 
