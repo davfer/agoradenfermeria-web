@@ -6,16 +6,22 @@
 
 import {useHead, useSeoMeta} from "@unhead/vue";
 import {useI18n} from "vue-i18n";
-import {useRouter} from "vue-router"; useRouter()
+import {useRouter} from "vue-router";
+import {watch} from "vue";
+
+useRouter()
 const router = useRouter()
-const {t, locale} = useI18n()
+const {t, locale, availableLocales} = useI18n()
+
+watch(locale, () => {
+  localStorage.setItem('locale', locale.value)
+})
 
 router.beforeEach((to, from, next) => {
-  if (to.query.lang) {
-    localStorage.setItem('locale', to.query.lang as string)
-  }
-
-  if (localStorage.getItem('locale')) {
+  if (to.query.lang && availableLocales.includes(to.query.lang as string)) {
+    locale.value = to.query.lang as string
+    localStorage.setItem('locale', locale.value)
+  } else if (localStorage.getItem('locale')) {
     locale.value = localStorage.getItem('locale') as string
   }
 
