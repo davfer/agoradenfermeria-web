@@ -24,7 +24,9 @@
           <v-tab to="/" value="/">{{ $t('header.revista') }}</v-tab>
           <v-tab v-if="false" to="/resources" value="/resources">{{ $t('header.recursos') }}</v-tab>
           <v-tab to="/contact" value="/contact">{{ $t('header.contacto') }}</v-tab>
+          <v-select v-model="locale" :items="items" class="flex-0-0"/>
         </v-tabs>
+
       </v-row>
     </v-container>
   </v-app-bar>
@@ -39,11 +41,15 @@ import {useRouter} from "vue-router";
 import {computed} from "vue";
 import {useDisplay} from "vuetify";
 
-const {t, locale} = useI18n()
-const { mobile } = useDisplay()
+const {locale} = useI18n()
+const {mobile} = useDisplay()
 
 const router = useRouter()
 
-const logoUrl = locale.value === "ca" ? logoCa : logoEs
+const logoUrl = computed(() => locale.value === "ca" ? logoCa : logoEs)
 const tabPage = computed(() => router.currentRoute.value.path)
+const items = [
+  {title: 'Idioma: Català', value: 'ca'},
+  {title: 'Idioma: Castellano', value: 'es'},
+]
 </script>
