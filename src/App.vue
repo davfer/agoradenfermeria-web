@@ -8,13 +8,17 @@ import {useHead, useSeoMeta} from "@unhead/vue";
 import {useI18n} from "vue-i18n";
 import {useRouter} from "vue-router";
 import {watch} from "vue";
+import {useMagazineStore} from "@/store/magazine";
 
 useRouter()
 const router = useRouter()
 const {t, locale, availableLocales} = useI18n()
+const magazines = useMagazineStore();
 
 watch(locale, () => {
+  console.log("asd")
   localStorage.setItem('locale', locale.value)
+  magazines.loadMagazines()
 })
 
 router.beforeEach((to, from, next) => {

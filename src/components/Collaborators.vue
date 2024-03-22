@@ -12,7 +12,7 @@ const props = defineProps<{ collaborators: Collaborator[] }>()
       <v-list class="ma-0 pa-0 ">
         <v-list-item class="mt-4 Collaborators__item" v-for="collaborator in props.collaborators" :key="collaborator.id">
           <v-img
-            :src="`https://agoradenfermeria.eu/images/${collaborator.logo?.file_path}`"
+            :src="`https://legacy.agoradenfermeria.eu/images/${collaborator.logo?.file_path}`"
             class="ma-2"
             :aspect-ratio="16/9"/>
         </v-list-item>
