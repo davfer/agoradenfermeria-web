@@ -55,9 +55,9 @@ const dotIcon = computed((): { icon: string, color: string } => {
 
 const image = computed(() => {
   if (!props.magazine.cover?.file_path) {
-    return 'https://www.agoradenfermeria.eu/images/web/no_magazine.jpg'
+    return 'https://legacy.agoradenfermeria.eu/images/web/no_magazine.jpg'
   }
-  return `https://www.agoradenfermeria.eu/images/${props.magazine.cover.file_path}`
+  return `https://legacy.agoradenfermeria.eu/images/${props.magazine.cover.file_path}`
 })
 </script>
 

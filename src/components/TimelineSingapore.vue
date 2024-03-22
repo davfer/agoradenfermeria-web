@@ -18,7 +18,7 @@ const dialog = ref(false)
       min-height="140px"
       class="mx-auto align-center justify-center flex-wrap text-center"
     >
-      <v-img class="Card__image" src="https://www.agoradenfermeria.eu/images/news/5bf5dff0abd6c.png"/>
+      <v-img class="Card__image" src="https://legacy.agoradenfermeria.eu/images/news/5bf5dff0abd6c.png"/>
       <v-card-title class="pt-0">
         Ágora informa desde el ICN 2019
       </v-card-title>

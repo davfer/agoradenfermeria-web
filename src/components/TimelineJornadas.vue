@@ -12,7 +12,7 @@ const dialog = ref(false)
       class="mx-auto align-center justify-center flex-wrap text-center"
     >
       <v-img class="Card__image"
-             :src="$i18n.locale === 'ca' ? 'https://www.agoradenfermeria.eu/images/news/57a4b69552ba0.png' : 'https://www.agoradenfermeria.eu/images/news/579e96b9979ec.png'"/>
+             :src="$i18n.locale === 'ca' ? 'https://legacy.agoradenfermeria.eu/images/news/57a4b69552ba0.png' : 'https://legacy.agoradenfermeria.eu/images/news/579e96b9979ec.png'"/>
       <v-card-text>
         <v-dialog
           v-model="dialog"
@@ -29,7 +29,8 @@ const dialog = ref(false)
             </v-btn>
           </template>
           <v-sheet>
-            <video src="https://www.agoradenfermeria.eu/files/jornada/video/resum_jornada.mp4" controls width="100%"></video>
+            <video controls src="https://legacy.agoradenfermeria.eu/files/jornada/video/resum_jornada.mp4"
+                   width="100%"></video>
           </v-sheet>
         </v-dialog>
         <v-btn

@@ -1,18 +1,26 @@
 import axios from 'axios'
 import {useI18n} from "vue-i18n";
+import {watch} from "vue";
 
 export function useFetcher() {
-  const i18n = useI18n()
+  const {locale} = useI18n()
 
   const headers: any = {
     'Content-Type': 'application/json',
   }
-  if (i18n.locale.value) {
-    headers['Accept-Language'] = i18n.locale.value
+
+  if (locale.value) {
+    headers['Accept-Language'] = locale.value
+
+    watch(locale, () => {
+      a.defaults.headers['Accept-Language'] = locale.value
+    })
   }
 
-  return axios.create({
+  const a = axios.create({
     baseURL: 'https://api.agoradenfermeria.eu/',
     headers: headers,
   })
+
+  return a
 }
