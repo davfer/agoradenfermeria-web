@@ -16,7 +16,6 @@ const {t, locale, availableLocales} = useI18n()
 const magazines = useMagazineStore();
 
 watch(locale, () => {
-  console.log("asd")
   localStorage.setItem('locale', locale.value)
   magazines.loadMagazines()
 })
