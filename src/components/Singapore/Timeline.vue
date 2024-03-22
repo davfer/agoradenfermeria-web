@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-import {computed} from "vue";
-import TimelineMagazine from "@/components/TimelineMagazine.vue";
-import TimelineSingapore from "@/components/TimelineSingapore.vue";
-import TimelineJornadas from "@/components/TimelineJornadas.vue";
 import {useI18n} from "vue-i18n";
 
 interface Item {
@@ -22,7 +18,7 @@ const items = [
     title: 'Los estudiantes de enfermería se reúnen en la Academia del SGH',
     icon: 'school',
     color: '#5b13e1',
-    news: 'https://www.agoradenfermeria.eu/files/singapore/1-students.pdf',
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/1-students.pdf',
     icn: 'https://www.icn.ch/es/noticias/los-estudiantes-de-enfermeria-se-reunen-en-singapur-en-el-congreso-del-consejo'
   },
   {
@@ -30,7 +26,7 @@ const items = [
     title: 'Actividades previas al Congreso',
     icon: 'timer',
     color: '#0546ba',
-    news: 'https://www.agoradenfermeria.eu/files/singapore/2-presentation.pdf',
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/2-presentation.pdf',
     icn: 'https://www.icn.ch/es/noticias/transformacion-de-la-oportunidad-en-accion-politica-e-inversion-para-apoyar-las-enfe'
   },
   {
@@ -38,7 +34,7 @@ const items = [
     title: 'Ceremonia de Apertura del Congreso ICN 2019',
     icon: 'account-group',
     color: '#0546ba',
-    news: 'https://www.agoradenfermeria.eu/files/singapore/3-opening.pdf',
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/3-opening.pdf',
     icn: 'https://www.icn.ch/es/noticias/la-presidenta-de-singapur-inaugura-el-congreso-del-consejo-internacional-de-enfermeras'
   },
   {
@@ -74,7 +70,7 @@ const items = [
     title: 'Simposio de los Socios: Ponencias',
     icon: 'handshake',
     color: '#dd8208',
-    news:'https://www.agoradenfermeria.eu/files/singapore/5-simposio.pdf',
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/5-simposio.pdf',
   },
   {
     date: new Date('2019-06-29'),
@@ -88,7 +84,7 @@ const items = [
     title: 'Simposio de los Socios: Ponencias',
     icon: 'handshake',
     color: '#d51703',
-    news: 'https://www.agoradenfermeria.eu/files/singapore/6-simposio.pdf'
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/6-simposio.pdf'
   },
   {
     date: new Date('2019-06-30'),
@@ -116,7 +112,7 @@ const items = [
     title: 'Dr. Tedros presente en el ICN 2019',
     icon: 'account-group',
     color: '#3a2624',
-    news:'https://www.agoradenfermeria.eu/files/singapore/4-tedros.pdf',
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/4-tedros.pdf',
     icn: 'https://www.icn.ch/fr/actualites/une-force-qui-peut-realiser-la-sante-pour-tous-une-force-qui-peut-realiser-la-couverture'
   },
   {
@@ -124,21 +120,21 @@ const items = [
     title: 'El Consejo Internacional de Enfermeras clausura su Congreso con presentaciones clave',
     icon: 'presentation',
     color: '#16c156',
-    news: 'https://www.agoradenfermeria.eu/files/singapore/8-ending.pdf'
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/8-ending.pdf'
   },
   {
     date: new Date('2019-07-01'),
     title: 'Participación de Colaboradores',
     icon: 'account-group',
     color: '#16c156',
-    news: 'https://www.agoradenfermeria.eu/files/singapore/9-coill.pdf'
+    news: 'https://legacy.agoradenfermeria.eu/files/singapore/9-coill.pdf'
   },
   {
     date: new Date('2019-07-01'),
     title: 'Simposio de los Socios: Agradecimientos',
     icon: 'handshake',
     color: '#16c156',
-    icn: 'https://www.agoradenfermeria.eu/files/singapore/10-closing.pdf'
+    icn: 'https://legacy.agoradenfermeria.eu/files/singapore/10-closing.pdf'
   },
 ]
 
