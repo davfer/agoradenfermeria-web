@@ -5,7 +5,7 @@
       -
       <v-btn href="tel:+34607922260" variant="text">+34 607 92 22 60</v-btn>
       -
-      <v-btn href="mailto:info@agoradenfermeria.com" variant="text">info@agoradenfermeria.com</v-btn>
+      <v-btn href="mailto:info@agoradenfermeria.eu" variant="text">info@agoradenfermeria.eu</v-btn>
     </div>
   </v-footer>
 </template>
