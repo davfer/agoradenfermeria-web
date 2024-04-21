@@ -1,12 +1,20 @@
 <script setup lang="ts">
+  import {SearchResult} from "@/models/Search";
+  import {computed} from "vue";
 
+  const props = defineProps<{
+    result: SearchResult
+  }>()
+
+  const keywords = computed(() => props.result.keywords.split(',').filter(r => r.trim() !== '').map(r => r.trim()))
+  const authors = computed(() => props.result.authors.map(r => r.shown).filter(r => r.trim() !== '').join('; '))
 </script>
 
 <template>
   <v-sheet
     class="d-flex align-center flex-wrap  mx-auto mt-10 px-3"
     elevation="10"
-    height="250"
+    min-height="250"
     rounded
     border
   >
@@ -21,15 +29,12 @@
       </div>
       <div class="flex-1-1 d-flex flex-column pl-7">
         <div>
-          <h1>Titulo</h1>
-          <p>Año de lanzamiento + volumen</p>
-          <p>autors</p>
+          <h1 v-html="props.result.title" class="text-md-h6"></h1>
+          <p>{{props.result.magazine.label}}</p>
+          <p>{{authors}}</p>
 
-          <v-chip class="mx-2" size="small">
-            key-words
-          </v-chip>
-          <v-chip class="mx-2" variant="outlined" size="small">
-            key-words-not-in-search
+          <v-chip v-for="k in keywords" class="mx-2" size="small">
+            {{ k }}
           </v-chip>
         </div>
         <div class="flex-1-1 d-flex justify-end align-end">
