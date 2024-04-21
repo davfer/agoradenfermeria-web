@@ -7,6 +7,7 @@ interface Magazine {
   modified_date: Date;
   type: number;
   status: number;
+  label: string;
 
   cover: Image | undefined;
   details: MagazineDetails | undefined;
