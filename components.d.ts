@@ -11,6 +11,7 @@ declare module 'vue' {
     Pdf: typeof import('./src/components/Pdf.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchItem: typeof import('./src/components/SearchItem.vue')['default']
     Summary: typeof import('./src/components/Summary.vue')['default']
     Timeline: typeof import('./src/components/Timeline.vue')['default']
     TimelineJornadas: typeof import('./src/components/TimelineJornadas.vue')['default']

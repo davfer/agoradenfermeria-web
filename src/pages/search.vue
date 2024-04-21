@@ -1,5 +1,10 @@
 <template>
-  SEARCH
+  <search-item />
+
+  <div class="text-center">
+    <v-pagination :length="5"></v-pagination>
+  </div>
+
 </template>
 <script lang="ts" setup>
 
@@ -7,6 +12,7 @@ import {onMounted} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import {useFetcher} from "@/lib/fetcher";
 import {SearchResult, SearchResults} from "@/models/Search";
+import SearchItem from "@/components/SearchItem.vue";
 
 const result = ref<SearchResults>()
 const loading = ref(false)
