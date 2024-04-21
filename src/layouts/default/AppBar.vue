@@ -7,16 +7,21 @@
 
     <v-container class="ma-2">
       <v-row>
-        <v-text-field
-          density="comfortable"
-          prepend-inner-icon="mdi-magnify"
-          rounded
-          variant="solo"
-        >
-          <template v-slot:append-inner>
-            <v-btn>{{ $t('header.search') }}</v-btn>
-          </template>
-        </v-text-field>
+        <v-form ref="formVal" action="/search" method="get" class="w-100">
+          <v-text-field
+            density="comfortable"
+            prepend-inner-icon="mdi-magnify"
+            rounded
+            variant="solo"
+            required="true"
+            name="q"
+            v-model="searchQuery"
+          >
+            <template v-slot:append-inner>
+              <v-btn type="submit" @click="formVal.submit()">{{ $t('header.search') }}</v-btn>
+            </template>
+          </v-text-field>
+        </v-form>
       </v-row>
 
       <v-row>
@@ -37,19 +42,22 @@ import logoCa from "/src/assets/logo_ca.png"
 import logoEs from "/src/assets/logo_es.png"
 
 import {useI18n} from "vue-i18n";
-import {useRouter} from "vue-router";
-import {computed} from "vue";
+import {useRoute} from "vue-router";
+import {computed, ref} from "vue";
 import {useDisplay} from "vuetify";
 
 const {locale} = useI18n()
 const {mobile} = useDisplay()
 
-const router = useRouter()
+const route = useRoute()
+const searchQuery = computed<string>(() => route.query.q as string) // 59
 
 const logoUrl = computed(() => locale.value === "ca" ? logoCa : logoEs)
-const tabPage = computed(() => router.currentRoute.value.path)
+const tabPage = computed(() => route.path)
 const items = [
   {title: 'Idioma: Català', value: 'ca'},
   {title: 'Idioma: Castellano', value: 'es'},
 ]
+
+const formVal = ref()
 </script>
