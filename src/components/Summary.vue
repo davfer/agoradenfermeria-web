@@ -27,7 +27,7 @@ const sections = computed(() => {
 
 const authors = computed(() => (summary: Summary) => {
   if (!summary.authors) return ''
-  return summary.authors.map(author => author.trim()).join('; ')
+  return summary.authors.map(author => author?.shown || '').join('; ')
 })
 </script>
 

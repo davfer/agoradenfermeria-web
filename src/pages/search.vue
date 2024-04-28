@@ -50,8 +50,6 @@ const fetchSearch = async (query: string, page: number) => {
     params.append('p', page.toString())
   }
 
-
-
   const res = await fetcher.get(`search?${params.toString()}`)
   result.value = res.data as SearchResults
   loading.value = false

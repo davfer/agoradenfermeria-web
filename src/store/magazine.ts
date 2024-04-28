@@ -51,7 +51,7 @@ export const useMagazineStore = defineStore('magazine', () => {
       await loadMagazines()
     }
 
-    return magazines.value.find((m) => m.id === id)
+    return magazines.value.find((m) => m.number === id)
   }
 
   return {loadMagazines, getMagazine, magazines}
