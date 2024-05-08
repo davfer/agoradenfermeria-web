@@ -6,7 +6,7 @@ if (props.magazine.magazine_format !== 'pdf') {
   throw new Error('PDF Magazine format not supported.')
 }
 
-const pdfPath = 'https://legacy.agoradenfermeria.eu/' + props.magazine.magazine_entrypoint + (props.page ? `#page=${props.page - 1}` : '')
+const pdfPath = 'https://legacy.agoradenfermeria.eu/' + props.magazine.magazine_entrypoint + (props.page ? `#page=${props.page}` : '')
 </script>
 
 <template>
