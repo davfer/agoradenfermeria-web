@@ -10,7 +10,7 @@ const pdfPath = 'https://legacy.agoradenfermeria.eu/' + props.magazine.magazine_
 </script>
 
 <template>
-  <embed :src="pdfPath" style="width: 100vw; height: 100vh"/>
+  <embed :src="pdfPath" style="width: 100vw; height: 100%"/>
 </template>
 
 <style scoped>
