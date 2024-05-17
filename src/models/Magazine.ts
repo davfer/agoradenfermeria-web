@@ -14,6 +14,7 @@ interface Magazine {
 
   magazine_entrypoint: string;
   magazine_format: MagazineFormat;
+  magazine_dir: string;
 
   articles_count: number;
 }

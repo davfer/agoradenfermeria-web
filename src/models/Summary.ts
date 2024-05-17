@@ -32,6 +32,7 @@ interface SummaryLabel {
 interface SummarySection {
   id: number;
   name: string;
+  title: string;
   institution: number;
   advertising: number;
   type: number;

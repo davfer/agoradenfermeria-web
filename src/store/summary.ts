@@ -42,6 +42,7 @@ export const useSummaryStore = defineStore('summary', () => {
             } as SummaryLabel,
             section: {
               name: response.data[i].section_name,
+              title: response.data[i].section_label_title,
               advertising: parseInt(response.data[i].section_advertising),
             } as SummarySection,
             institution: {
