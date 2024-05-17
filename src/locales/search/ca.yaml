@@ -1,0 +1,11 @@
+search:
+  results: "cap resultat | {n} resultat | {n} resultats"
+  relevance: "Rellevància"
+  keywords: "P. Clau"
+  all: "Tot"
+  article: "Artícle"
+  author: "Autor/a"
+  recent: "Recent"
+  title: "Títol"
+  order_by: "Ordenació:"
+  search_by: "Cerca:"

@@ -1,0 +1,11 @@
+search:
+  results: "ningún resultado | {n} resultado | {n} resultados"
+  relevance: "Relevancia"
+  keywords: "P. Clave"
+  all: "Todo"
+  article: "Artículo"
+  author: "Autor/a"
+  recent: "Reciente"
+  title: "Título"
+  order_by: "Ordenación:"
+  search_by: "Búsqueda:"

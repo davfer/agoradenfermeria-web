@@ -37,7 +37,7 @@ const authors = computed(() => (summary: Summary) => {
     :key="i"
     class="mb-4 Summary">
     <v-card-title class="bg-primary">
-      <h3 class="text-h5 Summary__title">{{ section[0].section?.name }}</h3>
+      <h3 class="text-h5 Summary__title">{{ section[0].section?.title }}</h3>
     </v-card-title>
 
     <v-card-text class="pa-0">

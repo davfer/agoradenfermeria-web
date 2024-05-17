@@ -33,6 +33,7 @@ export const useMagazineStore = defineStore('magazine', () => {
 
           magazine_entrypoint: (apiMagazine.lang === 'ca' ? 'CAT' : 'CAST') + '/' + apiMagazine.ruta + '/' + apiMagazine.revista,
           magazine_format: apiMagazine.formato === 'pdf' ? 'pdf' : 'html',
+          magazine_dir: apiMagazine.ruta,
 
           articles_count: parseInt(apiMagazine.articles_count),
         } as Magazine
