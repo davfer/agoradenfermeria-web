@@ -48,6 +48,10 @@ jobs:
           local-dir: ./
           server-dir: ./
           protocol: ftps
-
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/magazine/**
   
 
