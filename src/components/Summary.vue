@@ -57,7 +57,7 @@ const authors = computed(() => (summary: Summary) => {
                 prepend-icon="mdi-file-document"
                 size="small"
                 variant="outlined"
-              :to="`/magazine/${summary.abstract.file_path}`">
+              :href="`/magazine/${summary.abstract.file_path}`" target="_blank">
                 {{ $t('summary.abstract_btn') }}
               </v-btn>
             </div>
