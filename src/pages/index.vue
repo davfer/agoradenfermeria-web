@@ -3,13 +3,18 @@
     <v-row class="">
       <v-sheet border max-width="1600"
                class=" align-center  flex-wrap mx-auto pa-4 my-3" color="secondary" rounded>
-        <p class="mb-4 text-center">{{ $t('description') }}</p>
-
-        <p class="text-left"><strong>Secciones y contenidos de la revista</strong></p>
-        <p class="mb-2">Desde su primer número, edición impresa diciembre 1996 publicado en lengua catalana, en
-          el sumario constaba ya <strong>Editorial, Infermeria Ensenyament, Escrits, Entrevista, Recerca,
+        <p>Portal de la Revista trimestral Agora de Enfermería Digital. Revista con trabajos, reflexiones, artículos,
+          entrevistas, publicaciones y noticias sobre la profesión. Desde su primer número, edición impresa diciembre 1996 publicado en lengua catalana, en
+          el sumario constaba ya <em>Editorial, Infermeria Ensenyament, Escrits, Entrevista, Recerca,
             Novetats Informatiques, Comunicació Interna, Biblioteca,Vida a l&#39;Aulari, Que vols
-            saber?, Agenda</strong></p>
+            saber?, Agenda</em>. Alcanzando un total de 94 números publicados.</p>
+        <p class="mb-2">
+          Es en 2005 que se inicia la versión digital en lengua castellana y catalana hasta 2020. Llegando a editar
+          62 publicaciones digitales; disponibles para su visualización en este portal. Las publicaciones anteriores a la
+          fecha de 2005 se pueden consultar en las bibliotecas universitarias de las entidades colaboradoras o solicitándolo
+          a través de nuestro formulario de <v-btn variant="text" to="/contact">Contacto</v-btn> .
+        </p>
+        <p class="text-left"><strong>Secciones y contenidos de la revista</strong></p>
         <p>En las siguientes publicaciones se han mantenido, adaptado y añadido las demás secciones
           que han configurado la esencia de la revista, ser un espacio de encuentro, un “Agora de
           Enfermería”, ya sea a través de la docencia de donde surge, de la investigación, de sus
