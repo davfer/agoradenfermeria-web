@@ -12,7 +12,7 @@
           Es en 2005 que se inicia la versión digital en lengua castellana y catalana hasta 2020. Llegando a editar
           62 publicaciones digitales; disponibles para su visualización en este portal. Las publicaciones anteriores a la
           fecha de 2005 se pueden consultar en las bibliotecas universitarias de las entidades colaboradoras o solicitándolo
-          a través de nuestro formulario de <v-btn variant="text" to="/contact">Contacto</v-btn> .
+          a través de nuestro formulario de <a href="javascript:;" @click="$router.push('/contact')">Contacto</a> .
         </p>
         <p class="text-left"><strong>Secciones y contenidos de la revista</strong></p>
         <p>En las siguientes publicaciones se han mantenido, adaptado y añadido las demás secciones
